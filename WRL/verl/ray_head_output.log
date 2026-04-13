@@ -1,0 +1,24 @@
+nohup: ignoring input
+2025-06-02 02:04:47,254	WARNING utils.py:606 -- Ray currently does not support initializing Ray with fractional cpus. Your num_cpus will be truncated from 104.999 to 104.
+2025-06-02 02:04:46,140	INFO usage_lib.py:467 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2025-06-02 02:04:46,141	INFO scripts.py:865 -- [37mLocal node IP[39m: [1m172.30.52.4[22m
+2025-06-02 02:04:47,409	SUCC scripts.py:902 -- [32m--------------------[39m
+2025-06-02 02:04:47,409	SUCC scripts.py:903 -- [32mRay runtime started.[39m
+2025-06-02 02:04:47,409	SUCC scripts.py:904 -- [32m--------------------[39m
+2025-06-02 02:04:47,409	INFO scripts.py:906 -- [36mNext steps[39m
+2025-06-02 02:04:47,409	INFO scripts.py:909 -- To add another node to this Ray cluster, run
+2025-06-02 02:04:47,409	INFO scripts.py:912 -- [1m  ray start --address='172.30.52.4:6379'[22m
+2025-06-02 02:04:47,409	INFO scripts.py:921 -- To connect to this Ray cluster:
+2025-06-02 02:04:47,409	INFO scripts.py:923 -- [35mimport[39m[26m ray
+2025-06-02 02:04:47,409	INFO scripts.py:924 -- ray[35m.[39m[26minit()
+2025-06-02 02:04:47,409	INFO scripts.py:936 -- To submit a Ray job using the Ray Jobs CLI:
+2025-06-02 02:04:47,409	INFO scripts.py:937 -- [1m  RAY_ADDRESS='http://127.0.0.1:8265' ray job submit --working-dir . -- python my_script.py[22m
+2025-06-02 02:04:47,409	INFO scripts.py:946 -- See https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html 
+2025-06-02 02:04:47,409	INFO scripts.py:950 -- for more information on submitting Ray jobs to the Ray cluster.
+2025-06-02 02:04:47,409	INFO scripts.py:955 -- To terminate the Ray runtime, run
+2025-06-02 02:04:47,409	INFO scripts.py:956 -- [1m  ray stop[22m
+2025-06-02 02:04:47,410	INFO scripts.py:959 -- To view the status of the cluster, use
+2025-06-02 02:04:47,410	INFO scripts.py:960 --   [1mray status[22m[26m
+2025-06-02 02:04:47,410	INFO scripts.py:964 -- To monitor and debug Ray, view the dashboard at 
+2025-06-02 02:04:47,410	INFO scripts.py:965 --   [1m127.0.0.1:8265[22m[26m
+2025-06-02 02:04:47,410	INFO scripts.py:972 -- [4mIf connection to the dashboard fails, check your firewall settings and network configuration.[24m

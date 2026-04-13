@@ -1,0 +1,12 @@
+nohup: ignoring input
+2025-06-02 02:05:45,016	WARNING utils.py:606 -- Ray currently does not support initializing Ray with fractional cpus. Your num_cpus will be truncated from 104.999 to 104.
+[2025-06-02 02:05:45,068 W 4032 4032] global_state_accessor.cc:429: Retrying to get node with node ID 4a0d548146e4b364dd8e61585b0a6dcdbedc0750b4adcce11160a155
+2025-06-02 02:05:44,996	INFO scripts.py:1047 -- [37mLocal node IP[39m: [1m172.30.48.46[22m
+2025-06-02 02:05:46,075	SUCC scripts.py:1063 -- [32m--------------------[39m
+2025-06-02 02:05:46,075	SUCC scripts.py:1064 -- [32mRay runtime started.[39m
+2025-06-02 02:05:46,075	SUCC scripts.py:1065 -- [32m--------------------[39m
+2025-06-02 02:05:46,075	INFO scripts.py:1067 -- To terminate the Ray runtime, run
+2025-06-02 02:05:46,075	INFO scripts.py:1068 -- [1m  ray stop[22m
+2025-06-02 02:05:46,075	INFO scripts.py:1076 -- [36m[1m--block[22m[39m
+2025-06-02 02:05:46,075	INFO scripts.py:1077 -- This command will now block forever until terminated by a signal.
+2025-06-02 02:05:46,075	INFO scripts.py:1080 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.

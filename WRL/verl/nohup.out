@@ -1,0 +1,425 @@
+nohup: 忽略输入
++ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
++ MODEL_PATH=/nas/shared/kilab/hf-hub/cold_ckpt
++ ray job submit --address=http://127.0.0.1:8265 -- python3 -m verl.trainer.main config=/oss/rqy/qingyu/verl/examples/config.yaml worker.actor.model.model_path=/nas/shared/kilab/hf-hub/cold_ckpt trainer.n_gpus_per_node=8
+2025-06-22 22:02:26,813	INFO cli.py:41 -- [37mJob submission server address[39m: [1mhttp://127.0.0.1:8265[22m
+2025-06-22 22:02:28,136	SUCC cli.py:65 -- [32m-------------------------------------------------------[39m
+2025-06-22 22:02:28,136	SUCC cli.py:66 -- [32mJob 'raysubmit_djrXbmD5myRB5EaK' submitted successfully[39m
+2025-06-22 22:02:28,137	SUCC cli.py:67 -- [32m-------------------------------------------------------[39m
+2025-06-22 22:02:28,137	INFO cli.py:291 -- [36mNext steps[39m
+2025-06-22 22:02:28,137	INFO cli.py:292 -- Query the logs of the job:
+2025-06-22 22:02:28,138	INFO cli.py:294 -- [1mray job logs raysubmit_djrXbmD5myRB5EaK[22m
+2025-06-22 22:02:28,138	INFO cli.py:296 -- Query the status of the job:
+2025-06-22 22:02:28,138	INFO cli.py:298 -- [1mray job status raysubmit_djrXbmD5myRB5EaK[22m
+2025-06-22 22:02:28,139	INFO cli.py:300 -- Request the job to be stopped:
+2025-06-22 22:02:28,139	INFO cli.py:302 -- [1mray job stop raysubmit_djrXbmD5myRB5EaK[22m
+2025-06-22 22:02:28,142	INFO cli.py:309 -- Tailing logs until the job exits (disable with --no-wait):
+2025-06-22 22:02:28,010	INFO job_manager.py:531 -- Runtime env is setting up.
+/root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[2025-06-22 22:02:35,222] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+INFO 06-22 22:02:38 [importing.py:53] Triton module has been replaced with a placeholder.
+INFO 06-22 22:02:38 [__init__.py:239] Automatically detected platform cuda.
+2025-06-22 22:02:40,945	INFO worker.py:1554 -- Using address 10.1.3.207:6379 set in the environment variable RAY_ADDRESS
+2025-06-22 22:02:40,945	INFO worker.py:1694 -- Connecting to existing Ray cluster at address: 10.1.3.207:6379...
+2025-06-22 22:02:40,955	INFO worker.py:1879 -- Connected to Ray cluster. View the dashboard at [1m[32m127.0.0.1:8265 [39m[22m
+[36m(pid=321098)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+[36m(pid=321098)[0m   warnings.warn(
+[36m(pid=321098)[0m [2025-06-22 22:02:46,373] [WARNING] [real_accelerator.py:194:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[36m(pid=321098)[0m [2025-06-22 22:02:46,374] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[36m(pid=321098)[0m INFO 06-22 22:02:47 [importing.py:53] Triton module has been replaced with a placeholder.
+[36m(pid=321098)[0m INFO 06-22 22:02:47 [__init__.py:239] Automatically detected platform cuda.
+[36m(pid=321098)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+[36m(pid=321098)[0m   warnings.warn(
+[36m(main_task pid=321098)[0m {
+[36m(main_task pid=321098)[0m   "data": {
+[36m(main_task pid=321098)[0m     "train_files": "/oss/rqy/qingyu/verl/data/train_all_scaler_processed_2w_dp.parquet",
+[36m(main_task pid=321098)[0m     "val_files": "/oss/rqy/qingyu/verl/data/test.parquet",
+[36m(main_task pid=321098)[0m     "prompt_key": "prompt",
+[36m(main_task pid=321098)[0m     "answer_key": "answer",
+[36m(main_task pid=321098)[0m     "image_key": "images",
+[36m(main_task pid=321098)[0m     "max_prompt_length": 8192,
+[36m(main_task pid=321098)[0m     "max_response_length": 8192,
+[36m(main_task pid=321098)[0m     "rollout_batch_size": 384,
+[36m(main_task pid=321098)[0m     "system_prompt": null,
+[36m(main_task pid=321098)[0m     "shuffle": true,
+[36m(main_task pid=321098)[0m     "seed": 1,
+[36m(main_task pid=321098)[0m     "max_pixels": 4194304,
+[36m(main_task pid=321098)[0m     "min_pixels": 262144
+[36m(main_task pid=321098)[0m   },
+[36m(main_task pid=321098)[0m   "worker": {
+[36m(main_task pid=321098)[0m     "hybrid_engine": true,
+[36m(main_task pid=321098)[0m     "actor": {
+[36m(main_task pid=321098)[0m       "strategy": "fsdp",
+[36m(main_task pid=321098)[0m       "global_batch_size": 96,
+[36m(main_task pid=321098)[0m       "micro_batch_size_per_device_for_update": 4,
+[36m(main_task pid=321098)[0m       "micro_batch_size_per_device_for_experience": 16,
+[36m(main_task pid=321098)[0m       "max_grad_norm": 1.0,
+[36m(main_task pid=321098)[0m       "clip_ratio": 0.2,
+[36m(main_task pid=321098)[0m       "use_kl_loss": true,
+[36m(main_task pid=321098)[0m       "kl_loss_coef": 0.01,
+[36m(main_task pid=321098)[0m       "kl_loss_type": "low_var_kl",
+[36m(main_task pid=321098)[0m       "ppo_epochs": 1,
+[36m(main_task pid=321098)[0m       "padding_free": true,
+[36m(main_task pid=321098)[0m       "ulysses_sequence_parallel_size": 1,
+[36m(main_task pid=321098)[0m       "model": {
+[36m(main_task pid=321098)[0m         "model_path": "/nas/shared/kilab/hf-hub/cold_ckpt",
+[36m(main_task pid=321098)[0m         "tokenizer_path": "/nas/shared/kilab/hf-hub/cold_ckpt",
+[36m(main_task pid=321098)[0m         "override_config": {},
+[36m(main_task pid=321098)[0m         "enable_gradient_checkpointing": true,
+[36m(main_task pid=321098)[0m         "trust_remote_code": false,
+[36m(main_task pid=321098)[0m         "freeze_vision_tower": false
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "optim": {
+[36m(main_task pid=321098)[0m         "lr": 1e-06,
+[36m(main_task pid=321098)[0m         "betas": [
+[36m(main_task pid=321098)[0m           0.9,
+[36m(main_task pid=321098)[0m           0.999
+[36m(main_task pid=321098)[0m         ],
+[36m(main_task pid=321098)[0m         "weight_decay": 0.01,
+[36m(main_task pid=321098)[0m         "lr_warmup_ratio": 0.0,
+[36m(main_task pid=321098)[0m         "min_lr_ratio": null,
+[36m(main_task pid=321098)[0m         "warmup_style": "constant",
+[36m(main_task pid=321098)[0m         "training_steps": -1
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "fsdp": {
+[36m(main_task pid=321098)[0m         "enable_full_shard": true,
+[36m(main_task pid=321098)[0m         "enable_cpu_offload": false,
+[36m(main_task pid=321098)[0m         "enable_rank0_init": true,
+[36m(main_task pid=321098)[0m         "use_orig_params": false,
+[36m(main_task pid=321098)[0m         "torch_dtype": null,
+[36m(main_task pid=321098)[0m         "fsdp_size": -1,
+[36m(main_task pid=321098)[0m         "mp_param_dtype": "bf16",
+[36m(main_task pid=321098)[0m         "mp_reduce_dtype": "fp32",
+[36m(main_task pid=321098)[0m         "mp_buffer_dtype": "fp32"
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "offload": {
+[36m(main_task pid=321098)[0m         "offload_params": true,
+[36m(main_task pid=321098)[0m         "offload_optimizer": true
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "global_batch_size_per_device": -1
+[36m(main_task pid=321098)[0m     },
+[36m(main_task pid=321098)[0m     "critic": {
+[36m(main_task pid=321098)[0m       "strategy": "fsdp",
+[36m(main_task pid=321098)[0m       "global_batch_size": 256,
+[36m(main_task pid=321098)[0m       "micro_batch_size_per_device_for_update": 4,
+[36m(main_task pid=321098)[0m       "micro_batch_size_per_device_for_experience": 16,
+[36m(main_task pid=321098)[0m       "max_grad_norm": 1.0,
+[36m(main_task pid=321098)[0m       "cliprange_value": 0.5,
+[36m(main_task pid=321098)[0m       "ppo_epochs": 1,
+[36m(main_task pid=321098)[0m       "padding_free": false,
+[36m(main_task pid=321098)[0m       "ulysses_sequence_parallel_size": 1,
+[36m(main_task pid=321098)[0m       "model": {
+[36m(main_task pid=321098)[0m         "model_path": null,
+[36m(main_task pid=321098)[0m         "tokenizer_path": null,
+[36m(main_task pid=321098)[0m         "override_config": {},
+[36m(main_task pid=321098)[0m         "enable_gradient_checkpointing": true,
+[36m(main_task pid=321098)[0m         "trust_remote_code": true,
+[36m(main_task pid=321098)[0m         "freeze_vision_tower": false
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "optim": {
+[36m(main_task pid=321098)[0m         "lr": 1e-06,
+[36m(main_task pid=321098)[0m         "betas": [
+[36m(main_task pid=321098)[0m           0.9,
+[36m(main_task pid=321098)[0m           0.999
+[36m(main_task pid=321098)[0m         ],
+[36m(main_task pid=321098)[0m         "weight_decay": 0.01,
+[36m(main_task pid=321098)[0m         "lr_warmup_ratio": 0.0,
+[36m(main_task pid=321098)[0m         "min_lr_ratio": null,
+[36m(main_task pid=321098)[0m         "warmup_style": "constant",
+[36m(main_task pid=321098)[0m         "training_steps": -1
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "fsdp": {
+[36m(main_task pid=321098)[0m         "enable_full_shard": true,
+[36m(main_task pid=321098)[0m         "enable_cpu_offload": false,
+[36m(main_task pid=321098)[0m         "enable_rank0_init": false,
+[36m(main_task pid=321098)[0m         "use_orig_params": false,
+[36m(main_task pid=321098)[0m         "torch_dtype": null,
+[36m(main_task pid=321098)[0m         "fsdp_size": -1,
+[36m(main_task pid=321098)[0m         "mp_param_dtype": "bf16",
+[36m(main_task pid=321098)[0m         "mp_reduce_dtype": "fp32",
+[36m(main_task pid=321098)[0m         "mp_buffer_dtype": "fp32"
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "offload": {
+[36m(main_task pid=321098)[0m         "offload_params": false,
+[36m(main_task pid=321098)[0m         "offload_optimizer": false
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "global_batch_size_per_device": -1
+[36m(main_task pid=321098)[0m     },
+[36m(main_task pid=321098)[0m     "ref": {
+[36m(main_task pid=321098)[0m       "strategy": "fsdp",
+[36m(main_task pid=321098)[0m       "fsdp": {
+[36m(main_task pid=321098)[0m         "enable_full_shard": true,
+[36m(main_task pid=321098)[0m         "enable_cpu_offload": true,
+[36m(main_task pid=321098)[0m         "enable_rank0_init": true,
+[36m(main_task pid=321098)[0m         "use_orig_params": false,
+[36m(main_task pid=321098)[0m         "torch_dtype": null,
+[36m(main_task pid=321098)[0m         "fsdp_size": -1,
+[36m(main_task pid=321098)[0m         "mp_param_dtype": "bf16",
+[36m(main_task pid=321098)[0m         "mp_reduce_dtype": "fp32",
+[36m(main_task pid=321098)[0m         "mp_buffer_dtype": "fp32"
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "offload": {
+[36m(main_task pid=321098)[0m         "offload_params": false,
+[36m(main_task pid=321098)[0m         "offload_optimizer": false
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "micro_batch_size_per_device_for_experience": 16,
+[36m(main_task pid=321098)[0m       "padding_free": true,
+[36m(main_task pid=321098)[0m       "ulysses_sequence_parallel_size": 1
+[36m(main_task pid=321098)[0m     },
+[36m(main_task pid=321098)[0m     "reward": {
+[36m(main_task pid=321098)[0m       "reward_type": "function",
+[36m(main_task pid=321098)[0m       "compute_score": "instruction"
+[36m(main_task pid=321098)[0m     },
+[36m(main_task pid=321098)[0m     "rollout": {
+[36m(main_task pid=321098)[0m       "name": "vllm",
+[36m(main_task pid=321098)[0m       "n": 5,
+[36m(main_task pid=321098)[0m       "temperature": 1.0,
+[36m(main_task pid=321098)[0m       "top_p": 1.0,
+[36m(main_task pid=321098)[0m       "top_k": -1,
+[36m(main_task pid=321098)[0m       "limit_images": 0,
+[36m(main_task pid=321098)[0m       "dtype": "bf16",
+[36m(main_task pid=321098)[0m       "gpu_memory_utilization": 0.8,
+[36m(main_task pid=321098)[0m       "ignore_eos": false,
+[36m(main_task pid=321098)[0m       "enforce_eager": false,
+[36m(main_task pid=321098)[0m       "free_cache_engine": false,
+[36m(main_task pid=321098)[0m       "enable_chunked_prefill": false,
+[36m(main_task pid=321098)[0m       "tensor_parallel_size": 2,
+[36m(main_task pid=321098)[0m       "max_num_batched_tokens": 16000,
+[36m(main_task pid=321098)[0m       "max_num_seqs": 1024,
+[36m(main_task pid=321098)[0m       "disable_log_stats": true,
+[36m(main_task pid=321098)[0m       "val_override_config": {
+[36m(main_task pid=321098)[0m         "temperature": 0.5,
+[36m(main_task pid=321098)[0m         "n": 1
+[36m(main_task pid=321098)[0m       },
+[36m(main_task pid=321098)[0m       "prompt_length": 8192,
+[36m(main_task pid=321098)[0m       "response_length": 8192
+[36m(main_task pid=321098)[0m     }
+[36m(main_task pid=321098)[0m   },
+[36m(main_task pid=321098)[0m   "algorithm": {
+[36m(main_task pid=321098)[0m     "gamma": 1.0,
+[36m(main_task pid=321098)[0m     "lam": 1.0,
+[36m(main_task pid=321098)[0m     "adv_estimator": "grpo",
+[36m(main_task pid=321098)[0m     "kl_penalty": "kl",
+[36m(main_task pid=321098)[0m     "kl_type": "fixed",
+[36m(main_task pid=321098)[0m     "kl_coef": 0.0,
+[36m(main_task pid=321098)[0m     "kl_horizon": 0.0,
+[36m(main_task pid=321098)[0m     "kl_target": 0.0
+[36m(main_task pid=321098)[0m   },
+[36m(main_task pid=321098)[0m   "trainer": {
+[36m(main_task pid=321098)[0m     "total_episodes": 15,
+[36m(main_task pid=321098)[0m     "max_steps": null,
+[36m(main_task pid=321098)[0m     "project_name": "instruct_length",
+[36m(main_task pid=321098)[0m     "experiment_name": "qwen2_5_7b",
+[36m(main_task pid=321098)[0m     "logger": [
+[36m(main_task pid=321098)[0m       "swanlab"
+[36m(main_task pid=321098)[0m     ],
+[36m(main_task pid=321098)[0m     "nnodes": 3,
+[36m(main_task pid=321098)[0m     "n_gpus_per_node": 8,
+[36m(main_task pid=321098)[0m     "critic_warmup": 0,
+[36m(main_task pid=321098)[0m     "val_freq": 52,
+[36m(main_task pid=321098)[0m     "val_before_train": true,
+[36m(main_task pid=321098)[0m     "val_only": false,
+[36m(main_task pid=321098)[0m     "val_generations_to_log": 10,
+[36m(main_task pid=321098)[0m     "save_freq": 52,
+[36m(main_task pid=321098)[0m     "remove_previous_ckpt": false,
+[36m(main_task pid=321098)[0m     "remove_ckpt_after_load": false,
+[36m(main_task pid=321098)[0m     "save_checkpoint_path": "/oss/rqy/checkpoints/instruct_length/qwen2_5_7b",
+[36m(main_task pid=321098)[0m     "load_checkpoint_path": null
+[36m(main_task pid=321098)[0m   }
+[36m(main_task pid=321098)[0m }
+[36m(main_task pid=321098)[0m Size of train dataloader: 52
+[36m(main_task pid=321098)[0m Total training steps: 780
+[36m(main_task pid=321098)[0m DeprecationWarning: `ray.state.available_resources_per_node` is a private attribute and access will be removed in a future Ray version.
+[36m(pid=49179, ip=10.1.3.205)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+[36m(pid=49179, ip=10.1.3.205)[0m   warnings.warn(
+[36m(pid=49179, ip=10.1.3.205)[0m [2025-06-22 22:02:57,368] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(pid=49179, ip=10.1.3.205)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+[36m(pid=49179, ip=10.1.3.205)[0m   warnings.warn(
+[36m(pid=49179, ip=10.1.3.205)[0m INFO 06-22 22:03:00 [importing.py:53] Triton module has been replaced with a placeholder.
+[36m(pid=49179, ip=10.1.3.205)[0m INFO 06-22 22:03:00 [__init__.py:239] Automatically detected platform cuda.
+[36m(pid=49338, ip=10.1.3.205)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+[36m(pid=49338, ip=10.1.3.205)[0m   warnings.warn(
+[36m(pid=49339, ip=10.1.3.205)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+[36m(pid=49339, ip=10.1.3.205)[0m   warnings.warn(
+[36m(pid=49341, ip=10.1.3.205)[0m [2025-06-22 22:03:07,499] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(pid=49338, ip=10.1.3.205)[0m [2025-06-22 22:03:07,450] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(pid=49341, ip=10.1.3.205)[0m INFO 06-22 22:03:09 [importing.py:53] Triton module has been replaced with a placeholder.
+[36m(pid=49338, ip=10.1.3.205)[0m INFO 06-22 22:03:09 [__init__.py:239] Automatically detected platform cuda.
+[36m(pid=49343, ip=10.1.3.205)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml[32m [repeated 25x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(pid=49343, ip=10.1.3.205)[0m   warnings.warn([32m [repeated 25x across cluster][0m
+[36m(WorkerDict pid=49338, ip=10.1.3.205)[0m [rank2]:[W622 22:03:12.176241089 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m Use global batch size 480.
+[36m(pid=50157, ip=10.1.3.206)[0m [2025-06-22 22:03:08,816] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)[32m [repeated 21x across cluster][0m
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m Model config: Qwen2Config {
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "architectures": [
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m     "Qwen2ForCausalLM"
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   ],
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "attention_dropout": 0.0,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "eos_token_id": 151645,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "hidden_act": "silu",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "hidden_size": 3584,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "initializer_range": 0.02,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "intermediate_size": 18944,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "max_position_embeddings": 32768,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "max_window_layers": 28,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "model_type": "qwen2",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "num_attention_heads": 28,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "num_hidden_layers": 28,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "num_key_value_heads": 4,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "pad_token_id": 151643,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "rms_norm_eps": 1e-06,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "rope_scaling": null,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "rope_theta": 1000000.0,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "sliding_window": null,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "tie_word_embeddings": false,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "torch_dtype": "bfloat16",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "transformers_version": "4.51.3",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "use_cache": false,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "use_sliding_window": false,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "vocab_size": 152064
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m }
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m Ulysses patch applied!
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 53.95it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m NCCL version 2.21.5+cuda12.4
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m Qwen2ForCausalLM contains 7.62B parameters
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m After huggingface model init memory allocated: 0.00 GB, memory reserved: 0.00 GB.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m FSDP wrap policy: functools.partial(<function transformer_auto_wrap_policy at 0x7f3f0d1fb250>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>}).
+[36m(pid=50155, ip=10.1.3.206)[0m INFO 06-22 22:03:11 [importing.py:53] Triton module has been replaced with a placeholder.[32m [repeated 22x across cluster][0m
+[36m(pid=50155, ip=10.1.3.206)[0m INFO 06-22 22:03:11 [__init__.py:239] Automatically detected platform cuda.[32m [repeated 22x across cluster][0m
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m After FSDP module init memory allocated: 0.00 GB, memory reserved: 7.44 GB.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m After optimizer init memory allocated: 0.00 GB, memory reserved: 7.44 GB.
+[36m(WorkerDict pid=49339, ip=10.1.3.205)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(pid=50157, ip=10.1.3.206)[0m /root/miniconda3/envs/rlprm/lib/python3.10/site-packages/_distutils_hack/__init__.py:53: UserWarning: Reliance on distutils from stdlib is deprecated. Users must rely on setuptools to provide the distutils module. Avoid importing distutils or import setuptools first, and avoid setting SETUPTOOLS_USE_DISTUTILS=stdlib. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml[32m [repeated 19x across cluster][0m
+[36m(pid=50157, ip=10.1.3.206)[0m   warnings.warn([32m [repeated 19x across cluster][0m
+[36m(WorkerDict pid=50159, ip=10.1.3.206)[0m [rank12]:[W622 22:03:14.350123684 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 12]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m Model config: Qwen2Config {
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "architectures": [
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m     "Qwen2ForCausalLM"
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   ],
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "attention_dropout": 0.0,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "eos_token_id": 151645,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "hidden_act": "silu",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "hidden_size": 3584,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "initializer_range": 0.02,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "intermediate_size": 18944,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "max_position_embeddings": 32768,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "max_window_layers": 28,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "model_type": "qwen2",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "num_attention_heads": 28,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "num_hidden_layers": 28,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "num_key_value_heads": 4,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "pad_token_id": 151643,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "rms_norm_eps": 1e-06,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "rope_scaling": null,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "rope_theta": 1000000.0,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "sliding_window": null,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "tie_word_embeddings": false,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "torch_dtype": "bfloat16",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "transformers_version": "4.51.3",
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "use_cache": false,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "use_sliding_window": false,
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m   "vocab_size": 152064
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m }
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m Ulysses patch applied!
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.72s/it]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.71s/it]
+[36m(WorkerDict pid=321490)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.54s/it]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m Qwen2ForCausalLM contains 7.62B parameters
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m After huggingface model init memory allocated: 0.00 GB, memory reserved: 7.44 GB.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m FSDP wrap policy: functools.partial(<function transformer_auto_wrap_policy at 0x7f3f0d1fb250>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>}).
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  1.77s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  2.09s/it]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m After FSDP module init memory allocated: 1.18 GB, memory reserved: 17.59 GB.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m After optimizer init memory allocated: 1.18 GB, memory reserved: 17.59 GB.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m After offload actor optimizer during init memory allocated: 1.18 GB, memory reserved: 17.59 GB.
+[36m(WorkerDict pid=49343, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:717] This model supports multiple tasks: {'classify', 'generate', 'embed', 'score', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49343, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:1729] Disabling V1 multiprocessing for external launcher.
+[36m(WorkerDict pid=49343, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=16386.
+[36m(WorkerDict pid=49339, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:717] This model supports multiple tasks: {'classify', 'reward', 'generate', 'embed', 'score'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49341, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:717] This model supports multiple tasks: {'embed', 'score', 'reward', 'classify', 'generate'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49338, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:717] This model supports multiple tasks: {'reward', 'embed', 'score', 'generate', 'classify'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49340, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:717] This model supports multiple tasks: {'embed', 'reward', 'generate', 'score', 'classify'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49342, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:717] This model supports multiple tasks: {'score', 'embed', 'generate', 'reward', 'classify'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49337, ip=10.1.3.205)[0m INFO 06-22 22:03:41 [config.py:717] This model supports multiple tasks: {'generate', 'embed', 'classify', 'score', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'embed', 'classify', 'reward', 'score', 'generate'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=50161, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'classify', 'score', 'generate', 'embed', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=50160, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'reward', 'embed', 'generate', 'score', 'classify'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=50155, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'score', 'classify', 'embed', 'reward', 'generate'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49339, ip=10.1.3.205)[0m INFO 06-22 22:03:42 [core.py:58] Initializing a V1 LLM engine (v0.8.5.post1) with config: model='/nas/shared/kilab/hf-hub/cold_ckpt', speculative_config=None, tokenizer='/nas/shared/kilab/hf-hub/cold_ckpt', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=16384, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=42, served_model_name=/nas/shared/kilab/hf-hub/cold_ckpt, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+[36m(WorkerDict pid=321491)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'embed', 'classify', 'score', 'generate', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321490)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'score', 'embed', 'reward', 'generate', 'classify'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'classify', 'score', 'generate', 'reward', 'embed'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=50157, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'embed', 'generate', 'score', 'classify', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=50159, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'embed', 'classify', 'generate', 'reward', 'score'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321492)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'reward', 'generate', 'classify', 'embed', 'score'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321494)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'classify', 'generate', 'reward', 'score', 'embed'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321489)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'generate', 'reward', 'classify', 'score', 'embed'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321496)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'reward', 'score', 'generate', 'classify', 'embed'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'generate', 'embed', 'score', 'classify', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49339, ip=10.1.3.205)[0m WARNING 06-22 22:03:42 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7fb22c1ce1a0>
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m INFO 06-22 22:03:44 [utils.py:1055] Found nccl from library libnccl.so.2
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m INFO 06-22 22:03:44 [pynccl.py:69] vLLM is using nccl==2.21.5
+[36m(WorkerDict pid=49338, ip=10.1.3.205)[0m NCCL version 2.21.5+cuda12.4
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:44 [parallel_state.py:1004] rank 11 in world size 24 is assigned as DP rank 0, PP rank 0, TP rank 1
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:44 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m WARNING 06-22 22:03:44 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:44 [gpu_model_runner.py:1329] Starting to load model /nas/shared/kilab/hf-hub/cold_ckpt...
+[36m(WorkerDict pid=50161, ip=10.1.3.206)[0m INFO 06-22 22:03:44 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_14879bd6'), local_subscribe_addr='ipc:///tmp/b15ebd21-3977-49d2-9ecb-b37212ae09f8', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.58it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.49it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.53it/s]
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:47 [loader.py:458] Loading weights took 2.05 seconds
+[36m(WorkerDict pid=50156, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'classify', 'generate', 'embed', 'score', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:42 [config.py:1729] Disabling V1 multiprocessing for external launcher.[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:42 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=16386.[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=50162, ip=10.1.3.206)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'score', 'embed', 'generate', 'reward', 'classify'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=321493)[0m INFO 06-22 22:03:42 [config.py:717] This model supports multiple tasks: {'generate', 'embed', 'classify', 'score', 'reward'}. Defaulting to 'generate'.
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  2.23it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.91it/s]
+[36m(WorkerDict pid=49179, ip=10.1.3.205)[0m 
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:43 [core.py:58] Initializing a V1 LLM engine (v0.8.5.post1) with config: model='/nas/shared/kilab/hf-hub/cold_ckpt', speculative_config=None, tokenizer='/nas/shared/kilab/hf-hub/cold_ckpt', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=16384, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=42, served_model_name=/nas/shared/kilab/hf-hub/cold_ckpt, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:47 [gpu_model_runner.py:1347] Model loading took 7.1217 GiB and 2.309058 seconds
+[36m(WorkerDict pid=321495)[0m WARNING 06-22 22:03:43 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7ec1c4d8cee0>[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:53 [backends.py:420] Using cache directory: /root/.cache/vllm/torch_compile_cache/2aa9d56231/rank_11_0 for vLLM's torch.compile
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:53 [backends.py:430] Dynamo bytecode transform time: 5.90 s
+[36m(WorkerDict pid=50155, ip=10.1.3.206)[0m INFO 06-22 22:03:44 [utils.py:1055] Found nccl from library libnccl.so.2[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=50155, ip=10.1.3.206)[0m INFO 06-22 22:03:44 [pynccl.py:69] vLLM is using nccl==2.21.5[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=50155, ip=10.1.3.206)[0m NCCL version 2.21.5+cuda12.4[32m [repeated 10x across cluster][0m
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:44 [parallel_state.py:1004] rank 22 in world size 24 is assigned as DP rank 0, PP rank 0, TP rank 0[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:44 [cuda.py:221] Using Flash Attention backend on V1 engine.[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321495)[0m WARNING 06-22 22:03:44 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:44 [gpu_model_runner.py:1329] Starting to load model /nas/shared/kilab/hf-hub/cold_ckpt...[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321495)[0m INFO 06-22 22:03:44 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_0dc21584'), local_subscribe_addr='ipc:///tmp/49f0823e-b58c-4dda-a681-0d3f779f105a', remote_subscribe_addr=None, remote_addr_ipv6=False)[32m [repeated 11x across cluster][0m
+[36m(WorkerDict pid=321490)[0m INFO 06-22 22:03:47 [loader.py:458] Loading weights took 2.42 seconds[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321490)[0m INFO 06-22 22:03:47 [gpu_model_runner.py:1347] Model loading took 7.1217 GiB and 2.691973 seconds[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:03:58 [backends.py:118] Directly load the compiled graph(s) for shape None from the cache, took 4.416 s
+[36m(WorkerDict pid=321490)[0m INFO 06-22 22:03:54 [backends.py:420] Using cache directory: /root/.cache/vllm/torch_compile_cache/2aa9d56231/rank_17_0 for vLLM's torch.compile[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321490)[0m INFO 06-22 22:03:54 [backends.py:430] Dynamo bytecode transform time: 7.00 s[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=50158, ip=10.1.3.206)[0m INFO 06-22 22:04:03 [monitor.py:33] torch.compile takes 5.90 s in total
+[36m(WorkerDict pid=321490)[0m INFO 06-22 22:04:00 [backends.py:118] Directly load the compiled graph(s) for shape None from the cache, took 4.981 s[32m [repeated 23x across cluster][0m
+[36m(WorkerDict pid=321491)[0m INFO 06-22 22:04:05 [kv_cache_utils.py:634] GPU KV cache size: 1,568,096 tokens
+[36m(WorkerDict pid=321491)[0m INFO 06-22 22:04:05 [kv_cache_utils.py:637] Maximum concurrency for 16,384 tokens per request: 95.71x
+2025-06-22 22:04:09,431	INFO cli.py:91 -- Status for job 'raysubmit_djrXbmD5myRB5EaK': RUNNING
+2025-06-22 22:04:09,432	INFO cli.py:93 -- Status message: Job is currently running.
