@@ -1,5 +1,5 @@
 data:
-  train_files: /mnt/shared-storage-user/renqingyu/oss1/oss/rqy/qingyu/wildchat/merged_all_filtered.parquet
+  train_files: /mnt/shared-storage-user/renqingyu/oss1/oss/rqy/qingyu/wildchat/train.parquet
   val_files: /mnt/shared-storage-user/renqingyu/oss1/oss/rqy/qingyu/verl/data/test.parquet
   prompt_key: prompt
   max_prompt_length: 12000
