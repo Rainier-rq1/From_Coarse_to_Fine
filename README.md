@@ -1,4 +1,4 @@
-# 🚀 Instructions are all you need: Self-supervised Reinforcement Learning for Instruction Following
+# 🚀 From Coarse to Fine: Benchmarking and Reward Modeling for Writing-Centric Generation Tasks
 [![Github](https://img.shields.io/static/v1?logo=github&style=flat&color=pink&label=github&message=Rainier-rq/verl-if)]([https://github.com/Rainier-rq/verl-if])
 ![image](https://github.com/Rainier-rq/verl-if/blob/main/assets/11.png)
 ## 🔧 Environment Setup
