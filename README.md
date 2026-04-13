@@ -1,6 +1,7 @@
 # 🚀 From Coarse to Fine: Benchmarking and Reward Modeling for Writing-Centric Generation Tasks
-[![Github](https://img.shields.io/static/v1?logo=github&style=flat&color=pink&label=github&message=Rainier-rq/verl-if)]([https://github.com/Rainier-rq/verl-if])
-![image](https://github.com/Rainier-rq/verl-if/blob/main/assets/11.png)
+[![Github](https://img.shields.io/static/v1?logo=github&style=flat&color=pink&label=github&message=Rainier-rq1/From_Coarse_to_Fine)](https://github.com/Rainier-rq1/From_Coarse_to_Fine)
+![image](https://raw.githubusercontent.com/Rainier-rq1/From_Coarse_to_Fine/main/WEval/q.png)
+
 ## 🔧 Environment Setup
 - Python and required dependencies
   ```bash
