@@ -9,6 +9,18 @@
    cd WEval
    ```
 
+- Inference
+    ```bash
+   cd WEval
+   ```
+
+- Compute Correlation
+    ```bash
+   cd WEval
+   ```
+
+
+
 # Training--WRL
 ## 🔧 Environment Setup
 - Enter the directory
