@@ -122,12 +122,12 @@ def generate_messages(data, batch_size):
     return all_batches, len(all_batches)
 
 def main():
-    model_path = "/mnt/shared-storage-user/renqingyu/models/models--AQuarterMile-WritingBench-Critic-Model-Qwen-7B"
+    model_path = "models--AQuarterMile-WritingBench-Critic-Model-Qwen-7B"
     model = LLM(model_path, dtype='bfloat16', gpu_memory_utilization=0.8, tensor_parallel_size=4, max_num_seqs=256)
     tokenizer = AutoTokenizer.from_pretrained(model_path)
 
-    input_file = "/mnt/shared-storage-user/renqingyu/ranking_new/5c_llama-construct.jsonl"
-    output_file = "/mnt/shared-storage-user/renqingyu/ranking_new/writing/5c_llama-construct_wb.jsonl"
+    input_file = "eval.jsonl"
+    output_file = "wb.jsonl"
 
     # 自动推断group_size
     group_size = infer_group_size_from_filename(input_file)
