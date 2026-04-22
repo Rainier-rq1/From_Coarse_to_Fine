@@ -38,7 +38,7 @@ class Tracking:
             import wandb  # type: ignore
             os.environ["WANDB_MODE"] = "offline"
             
-            wandb.init(project=project_name, name=experiment_name, config=config,mode="offline",dir="/mnt/shared-storage-user/renqingyu/wandb")
+            wandb.init(project=project_name, name=experiment_name, config=config,mode="offline",dir="/mnt/wandb")
             self.logger["wandb"] = wandb
 
         if "mlflow" in default_backend:
