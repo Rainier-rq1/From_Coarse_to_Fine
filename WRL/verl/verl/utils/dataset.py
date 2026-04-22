@@ -1,35 +1,3 @@
-
-EXAMPLE = """
-user
-In this task, you're given an article and an answer. Your task is to generate the fill-in-the-blank question for this answer based on the given article. The blanks are always at the end of the question, and can be filled with more than one word or phrase. \n input : Article: In 1955, a man named Raymond Kroc entered a partnership with two brothers named Mcdonald. They operated a popular restaurant in California which sold food that was easy to prepare and serve quickly. Hamburgers, French fries, and cold drinks were the main foods on the limited menu. Kroc opened similar eating places under the same name, \"McDonald's\" and they were a quick success. He later took over the company and today it is one of the most famous and successful \"fast-food\" chains  in America and the world. Why was his idea so successful? Probably the most important reason was that his timing was right. In the 1950s, most married women stayed home to keep house and take care of their children. During the 1960s, the movement for equality  between men and women and an economy  that needed more families to have two money-earners resulted in many women returning to the workplace. This meant that they had less time and energy to do housework, so they depended more on fast-food restaurants. Single parents also have little time to spend in the kitchen. People living alone because of divorce  or a preference for a \"single lifestyle\" also depend on this type of food, since cooking for one is often more trouble than it is worth. Fast food is not part of the diet of all Americans. Another of the 1960s was called back-to-nature movement. More and more Americans based their diets on natural foods. This preference for natural foods continues to this day. These products can now be found not only in the special health food store but also in many supermarkets. \n answer: the effect social and economic changes have on people's eating habits.  Your answer must contain exactly 4 bullet point in Markdown using the following format:\n* Bullet point one.\n* Bullet point two.\n.... answer with less than 70. Your answer must have at least 3 placeholders, wrapped in square brackets, such as [author]. Highlight at least 3 sections of your response in markdown such as *highlighted section*. Your answer should be in all capital letters, no lowercase letters allowed.
-
-assistant
-<think>
-Alright, let's break down this task:\n\n1. I need to generate a fill-in-the-blank question based on a given article where the answer is already provided.\n2. The fill-in-the-blanks will be at the end of the question and can be more than one word/phrase.\n3. The article is about McDonald's rise and changes in American eating habits.\n4. The answer given is \"the effect social and economic changes have on people's eating habits.\"\n\nExplicit Constraints:\n- My response must contain exactly 4 bullet points in Markdown format.\n- My answer should be less than 70 words.\n- My answer must include at least 3 placeholders in square brackets.\n- I need to highlight at least 3 sections of my response in markdown.\n- My answer should be in ALL CAPITAL LETTERS.\n\nLet me start by thinking about what kind of fill-in-the-blank question would lead to the answer \"the effect social and economic changes have on people's eating habits.\"\n\nThe article discusses how McDonald's became successful, particularly due to timing with social changes like women entering the workforce, single parents having less time, and people living alone. It also mentions a back-to-nature movement affecting food choices. So the question should be about how these social and economic changes influenced eating habits.\n\nPotential fill-in-the-blank question: \"The article primarily discusses how the rise of fast food restaurants like McDonald's and health food stores was influenced by [social and economic changes], which demonstrates [the impact] of these changes on [people's eating habits].\"\n\nNow I need to format this in ALL CAPS, with bullet points, and highlight certain sections.\n\nLet me draft the answer:\n\n* THE ARTICLE PRIMARILY DISCUSSES HOW THE RISE OF FAST FOOD RESTAURANTS LIKE *MCDONALD'S* WAS INFLUENCED BY [SOCIAL TRENDS].\n* THESE TRENDS INCLUDED *WOMEN ENTERING THE WORKFORCE* AND CHANGES IN FAMILY STRUCTURE SUCH AS [SINGLE PARENTING].\n* THE SUCCESS OF FAST FOOD CHAINS AND ALSO *HEALTH FOOD STORES* DEMONSTRATES [EVOLVING CONSUMER NEEDS].\n* THE TEXT ILLUSTRATES HOW THESE FACTORS COMBINED TO CHANGE [AMERICAN EATING HABITS].\n\nLet me check if this meets all the constraints:\n- Contains exactly 4 bullet points in Markdown format ✓\n- Is in ALL CAPITAL LETTERS ✓\n- Has at least 3 placeholders in square brackets: [SOCIAL TRENDS], [SINGLE PARENTING], [EVOLVING CONSUMER NEEDS], [AMERICAN EATING HABITS] ✓\n- Has at least 3 highlighted sections: *MCDONALD'S*, *WOMEN ENTERING THE WORKFORCE*, *HEALTH FOOD STORES* ✓\n- Word count: approximately 63 words, which is less than 70 ✓\n\nHowever, I need to make sure the fill-in-the-blank question actually leads to the answer \"the effect social and economic changes have on people's eating habits.\" Let me refine this to make it clearer:\n\n* THE ARTICLE PRIMARILY DISCUSSES HOW *FAST FOOD RESTAURANTS* LIKE MCDONALD'S BECAME SUCCESSFUL DUE TO [CHANGING SOCIAL PATTERNS].\n* FACTORS SUCH AS *WOMEN ENTERING THE WORKFORCE* AND THE RISE OF [SINGLE-PARENT HOUSEHOLDS] CONTRIBUTED.\n* THE TEXT ALSO MENTIONS *HEALTH FOOD TRENDS* AS ANOTHER RESPONSE TO [SOCIETAL SHIFTS].\n* OVERALL, THE PASSAGE DEMONSTRATES [THE EFFECT SOCIAL AND ECONOMIC CHANGES HAVE ON PEOPLE'S EATING HABITS].\n\nThis better aligns with the expected answer, as the last bullet point's placeholder directly contains the answer. But I realized the last placeholder essentially gives away the entire answer, which isn't how fill-in-the-blank questions typically work. Let me adjust:\n\n* THE ARTICLE PRIMARILY DISCUSSES HOW *FAST FOOD RESTAURANTS* LIKE MCDONALD'S BECAME SUCCESSFUL DUE TO [TIMING].\n* FACTORS SUCH AS *WOMEN ENTERING THE WORKFORCE* AND THE RISE OF [SINGLE-PARENT HOUSEHOLDS] CONTRIBUTED.\n* THE TEXT ALSO MENTIONS *HEALTH FOOD TRENDS* AS ANOTHER RESPONSE TO [SOCIETAL SHIFTS].\n* OVERALL, THE PASSAGE DEMONSTRATES WHAT?\n\nThis makes it a proper fill-in-the-blank question where the answer would be \"the effect social and economic changes have on people's eating habits.\"\n\nHowever, I see that the instructions want the blanks to be at the end of the question. So I need to restructure this again.\n\nLet's try another approach:\n\n* THE ARTICLE DESCRIBES HOW *FAST FOOD RESTAURANTS* LIKE MCDONALD'S SUCCEEDED DURING A TIME OF [SOCIAL CHANGE].\n* *WOMEN ENTERING THE WORKFORCE* AND CHANGES IN FAMILY STRUCTURE CREATED DEMAND FOR [CONVENIENT DINING OPTIONS].\n* THE RISE OF THE *BACK-TO-NATURE MOVEMENT* SIMULTANEOUSLY CREATED MARKETS FOR [HEALTH FOOD].\n* THESE EXAMPLES ILLUSTRATE [THE EFFECT SOCIAL AND ECONOMIC CHANGES HAVE ON PEOPLE'S EATING HABITS].\n\nThis structure better places the blanks at the end of statements, with the final blank containing the answer. Let me check the constraints again:\n\n- Contains exactly 4 bullet points in Markdown format ✓\n- Is in ALL CAPITAL LETTERS ✓\n- Has at least 3 placeholders in square brackets ✓\n- Has at least 3 highlighted sections ✓\n- Word count: approximately 66 words, which is less than 70 ✓\n\nBut I now realize I've been misunderstanding the task. I need to create a single fill-in-the-blank question where the answer is \"the effect social and economic changes have on people's eating habits.\" The bullet points should be part of my answer format, not the question itself.\n\nLet me reframe this:\n\nThe question should be something like: \"According to the article, the success of fast-food chains like McDonald's and the growth of health food stores demonstrates [the effect social and economic changes have on people's eating habits].\"\n\nNow, I need to present this as my answer in the required format. Let me create the final answer:
-</think>
-
-<answer>
-* THE ARTICLE EXPLAINS HOW *FAST FOOD RESTAURANTS* BECAME SUCCESSFUL DUE TO [SOCIETAL CHANGES].\n* THE TEXT DESCRIBES HOW *WOMEN ENTERING THE WORKFORCE* CREATED DEMAND FOR [CONVENIENT DINING].\n* THE PASSAGE ALSO MENTIONS HOW THE *BACK-TO-NATURE MOVEMENT* INFLUENCED [FOOD PREFERENCES].\n* ACCORDING TO THE ARTICLE, THE RISE OF MCDONALD'S AND HEALTH FOOD STORES DEMONSTRATES [THE EFFECT SOCIAL AND ECONOMIC CHANGES HAVE ON PEOPLE'S EATING HABITS].
-</answer>
-""".strip()
-
-instruction_system_prompt = """
-Output your answer following the format: <think> [your  analysis] </think><answer>[your answer]</answer>
-
-In your <think> section, you can employ these strategic approaches:
-1. Constraint Analysis: Thoroughly examine each explicit and implicit constraint, identifying their interdependencies and potential conflicts.
-2. Validation Strategy: Draft preliminary answers, then methodically verify compliance with each constraint, making iterative refinements as needed.
-3. Sequencing Logic: Determine the optimal order for addressing constraints, prioritizing foundational requirements before tackling dependent ones.
-4. Edge Case Consideration: Proactively identify boundary conditions and exceptions that might challenge constraint compliance.
-5. Coherence Check: Ensure your solution maintains internal consistency while satisfying all requirements simultaneously.
-6. Format Verification: Confirm your response adheres to all specified formatting and structural guidelines.
-
-In your <answer> section, deliver a solution that precisely implements all requirements while maintaining natural flow and coherence. Your final response must satisfy all constraints without drawing attention to the mechanics of constraint management itself.
-
-""".format(example = EXAMPLE).strip()
-
-
-
 import math
 import os
 from collections import defaultdict
@@ -102,15 +70,12 @@ class RLHFDataset(Dataset):
         image_key: str = "images",
         max_prompt_length: int = 1024,
         truncation: str = "error",
-        system_prompt: str = "",
         max_pixels: int = None,
         min_pixels: int = None,
     ):
         self.tokenizer = tokenizer
         self.processor = processor
         self.prompt_key = prompt_key
-        self.system_prompt=instruction_system_prompt
-        # self.answer_key = answer_key
         self.image_key = image_key
         self.max_prompt_length = max_prompt_length
         self.truncation = truncation
@@ -134,23 +99,15 @@ class RLHFDataset(Dataset):
 
     def __getitem__(self, index):
         row_dict: dict = self.dataset[index]
-        # messages = [{"role": "user", "content": row_dict[self.prompt_key] +  '\n\n' + 'Remember: We will check for the "<think>.*</think><answer>.*</answer>" pattern to ensure compliance.'}]
         messages = [{"role": "user", "content": row_dict[self.prompt_key]}]
 
         constraints= row_dict.pop('constraint')
         instruction_id_list = row_dict.pop('instruction_id_list')
-
-
-        # if 'light' in instruction_id_list or 'light_choice' in instruction_id_list:
-        #     messages.insert(0, {"role": "system", "content": "After reasoning step-by-step, output your answer strictly following the format: <think> [your step-by-step analysis] </think><answer>[your answer]</answer>"})
-        # else:
-        #     messages.insert(0, {"role": "system", "content": instruction_system_prompt})
         
 
         messages.insert(0, {"role": "system", "content": "Output your answer strictly following the format: <think> [your step-by-step analysis] </think><answer>[your answer]</answer>"})
         
-        # if self.system_prompt:
-        #     messages.insert(0, {"role": "system", "content":instruction_system_prompt})
+        
 
         prompt = self.tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
 
