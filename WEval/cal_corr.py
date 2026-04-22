@@ -74,7 +74,7 @@ def process_jsonl(input_path, output_path, group_size=4):
 
 
 # 示例调用
-input_file = 'qwen.jsonl'
-output_file = 'output_ranked.jsonl'
+input_file = 'rm_ranked.jsonl'
+output_file = 'corri_rm.jsonl'
 process_jsonl(input_file, output_file, group_size=5)
 
