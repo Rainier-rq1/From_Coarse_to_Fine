@@ -2,7 +2,7 @@
 [![Github](https://img.shields.io/static/v1?logo=github&style=flat&color=pink&label=github&message=Rainier-rq1/From_Coarse_to_Fine)](https://github.com/Rainier-rq1/From_Coarse_to_Fine)
 ![image](https://raw.githubusercontent.com/Rainier-rq1/From_Coarse_to_Fine/main/WEval/q.png)
 
-# WRL
+# Training--WRL
 ## 🔧 Environment Setup
 - Enter the directory
     ```bash
