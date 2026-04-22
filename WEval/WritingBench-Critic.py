@@ -127,7 +127,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(model_path)
 
     input_file = "eval.jsonl"
-    output_file = "wb.jsonl"
+    output_file = "wb_ranked.jsonl"
 
     # 自动推断group_size
     group_size = infer_group_size_from_filename(input_file)
