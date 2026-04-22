@@ -11,11 +11,11 @@
    ```
 ---
 ## 1. Start RM Service
-1. Open and edit `rm_service.py`:
+1. Open and edit `RM.py`:
    - Modify the **model_name** in the script to your trained reward model's path.
 2. Run on development machine:
    ```bash
-   python rm_service.py
+   python RM.py
    ```
 3. After successful startup, the console will output the **IP address** and **port number** of the RM service.
 ---
