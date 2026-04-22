@@ -2,6 +2,7 @@
 [![Github](https://img.shields.io/static/v1?logo=github&style=flat&color=pink&label=github&message=Rainier-rq1/From_Coarse_to_Fine)](https://github.com/Rainier-rq1/From_Coarse_to_Fine)
 ![image](https://raw.githubusercontent.com/Rainier-rq1/From_Coarse_to_Fine/main/WEval/q.png)
 
+# WRL
 ## 🔧 Environment Setup
 - Python and required dependencies
   ```bash
@@ -53,36 +54,3 @@
    sh examples/qwen2_7b_instruction.sh
    ```
 ---
-## 4. Debugging and Notes
-- If model output format is different, ensure **regex matching correctly extracts the answer**.
-- For multi-machine deployment, pay attention to:
-  - Whether paths are correct
-  - Whether network connectivity is normal
-  - Whether node count and port configurations are consistent across nodes
----
-## 5. Usage Flow Overview
-| Step               | Operation Content |
-|--------------------|-------------------|
-| **Start RM Service** | Run `python bia_use.py` on development machine and modify RM model path |
-| **Configure Reward** | Fill in IP/Port in `instruction_reward.py` and adjust regex matching |
-| **Configure Training Script** | Edit `qwen2_7b_instruction.sh` and `config.yaml`, update paths and node count |
-| **Start Training**   | Execute `sh examples/qwen2_7b_instruction.sh` |
----
-## Quick Command Summary
-```bash
-# 1. Start RM service (single-GPU development machine)
-python bia_use.py  # Note: modify RM model path
-# 2. Start multi-machine training (execute on master node)
-sh examples/qwen2_7b_instruction.sh  # Note: configure paths and node parameters
-```
----
-## 🙋 Support
-If you have any questions or issues, please feel free to raise them in Issues or contact us. 😄
-
----
-## 📚 Acknowledgments
-This project is built upon the excellent framework [EasyR1](https://github.com/hiyouga/EasyR1). We thank the contributors for their outstanding work.
-
----
-### Thank you for using **verl-if** 🎉
-This project welcomes everyone to provide opinions, suggestions, or submit PRs to improve it together!
