@@ -71,7 +71,7 @@ worker:
 trainer:
   total_episodes: 5
   logger: ["wandb"]
-  project_name: wild_all_Sky_qwen3
+  project_name: writing_qwen
   experiment_name: qwen2_5_7b
   n_gpus_per_node: 8
   nnodes: 1
