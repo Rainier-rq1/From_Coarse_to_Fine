@@ -4,10 +4,11 @@
 
 # WRL
 ## 🔧 Environment Setup
-- Python and required dependencies
+- Enter the directory
     ```bash
    cd WRL/verl
    ```
+- Python and required dependencies
   ```bash
    pip install -e .
    ```
