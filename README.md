@@ -12,6 +12,8 @@
 - Inference(Generation Reward Model)
     ```bash
    python WritingBench-Critic.py
+   ```
+  ```bash
    python llm_judge.py
    ```
 - Inference(Scalar Reward Model)
