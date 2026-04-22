@@ -15,7 +15,7 @@ def infer_group_size_from_filename(filename):
     return 3
 
 input_file = 'eval.jsonl'
-output_file = 'rm.jsonl'
+output_file = 'rm_ranked.jsonl'
 url = "http://0.0.0.0:55111/predict"
 
 # 自动推断group_size
