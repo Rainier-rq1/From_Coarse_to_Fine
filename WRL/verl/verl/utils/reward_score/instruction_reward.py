@@ -103,7 +103,6 @@ def instruction_val_compute_score(answer, item):
     answer_match = re.search(answer_pattern, answer, re.DOTALL)
     
     if not answer_match:
-        # print("not answer_match")
         return 0,0,len(item),0
     
     ids_to_check = item['instruction_id_list']
