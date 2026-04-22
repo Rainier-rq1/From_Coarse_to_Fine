@@ -37,7 +37,7 @@
    config.yaml
    ```
    - Configure the correct **model path**
-   - Configure **number of nodes, communication ports** and other parameters
+   - Configure  other parameters
 3. Start training (execute on master node):
    ```bash
    sh examples/qwen2_7b_instruction.sh
