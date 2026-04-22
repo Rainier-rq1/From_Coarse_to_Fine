@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 # Load model and tokenizer
-model_name = "/mnt/shared-storage-user/renqingyu/models/models--renqingyu--renqingyu-rm_7b"
+model_name = "Path to Reward Model"
 tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
 model = AutoModelForSequenceClassification.from_pretrained(
     model_name, 
@@ -30,24 +30,6 @@ def predict():
         
         # Format input text
         text = f"You need to determine whether the response adheres to this constraint. Only output  1 if it does, otherwise only output  0.  Response: {answer}. Constraint: {question}"
-        # text = f"""
-        #     You need to determine whether a response satisfies the given constraint. The type of constraint relationship must be automatically inferred from the context.
-
-        #     There are five possible types:
-
-        #         1. Single: The response must satisfy one constraint.
-
-        #         2. And : The response must satisfy all listed constraints simultaneously.
-
-        #         3. Chain : The response must complete multiple tasks sequentially, in order.
-
-        #         4. Selection : The response must follow branching conditions and satisfy the correct branch.
-
-        #         5.Nested : The response involves nested combinations of And/Chain/Selection.
-
-        #     Finally, you must output: 1 if the response satisfies the constraint; 0 if it does not.
-
-        #     Response: {answer} Constraint: {question}"""
         
         # Tokenize and predict
         inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True).to("cuda")
