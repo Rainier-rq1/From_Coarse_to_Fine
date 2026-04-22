@@ -22,11 +22,6 @@
 ## 2. Configure Reward Interface
 1. Open `verl/utils/reward_score/instruction_reward.py`
 2. Replace the **IP and Port** in the file with the address displayed when the RM service started.
-3. If the model output format is different, adjust the following regex matching code:
-   ```python
-   answer_match = re.search(r"</think>\n\n(.*)", answer, re.DOTALL)
-   ```
-   Modify the `</think>\n\n(.*)` matching rule according to your model's output format to correctly extract the answer content.
 ---
 ## 3. RL Training 
 1. Edit the training startup script:
@@ -40,16 +35,7 @@
    ```
    - Configure the correct **model path**
    - Configure **number of nodes, communication ports** and other parameters
-3. Start the Ray head node.
-   ```bash
-   ray start --include-dashboard=True --head --num-gpus 8 --max-worker-port 12800 --runtime-env-agent-port 20100 --dashboard-agent-grpc-port 20101 --dashboard-agent-listen-port 20102 --metrics-export-port 20103
-   ```
-4. Start the Ray worker node and connect to the head node.
-   ```bash
-   ray start --address $MASTER_IP:6379 --num-gpus 8 --max-worker-port 12800 --runtime-env-agent-port 20100 --dashboard-agent-grpc-port 20101 --dashboard-agent-listen-port 20102 --metrics-export-port 20103 --block
-   ```
-   - MASTER_IP refers to the IP address obtained in previous step.
-7. Start training (execute on master node):
+3. Start training (execute on master node):
    ```bash
    sh examples/qwen2_7b_instruction.sh
    ```
