@@ -82,7 +82,7 @@ trainer:
   save_freq: 34
   remove_previous_ckpt: false
   remove_ckpt_after_load: false
-  save_checkpoint_path: /mnt/shared-storage-user/renqingyu/oss1/oss/rqy/checkpoints/wild_all_Sky_qwen3/qwen2_5_7b
+  save_checkpoint_path: YOUR OUTPUT PATH 
   load_checkpoint_path: null
 
   
