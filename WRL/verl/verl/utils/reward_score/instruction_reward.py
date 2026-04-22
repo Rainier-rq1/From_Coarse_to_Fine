@@ -57,17 +57,14 @@ def call_build_description(obj, args):
 
 def instruction_compute_score(answer, item):
     res=0
-    # tags = ["<think>", "</think>", "<answer>", "</answer>"]
-    # for tag in tags:
-    #     if answer.count(tag) != 1:
-    #         return 0
+
     pattern = re.compile(r"<think>.*?</think>\s*<answer>(.*?)</answer>", re.DOTALL)
     answer_match = re.fullmatch(pattern, answer)
 
 
   
 
-    # answer_match = re.search(r"</think>\n(.*)", answer, re.DOTALL)
+    
     if not answer_match:
         return 0
     
@@ -80,41 +77,7 @@ def instruction_compute_score(answer, item):
     
 
 
-    # is_following_list = []
-    # for ids, arg,con in zip(ids_to_check, args_to_check,constraints):
-    #     if ids in ['soft_content:language', 'soft','soft_content:open_ended', 'situation:suggestion', 'situation:role_play', 'situation:story_generation', 'style:open_ended']:
-    #         #url = "http://172.30.44.182:5000/predict"
-    #         url = "http://100.99.119.58:55111/predict"
-    #         data = {
-    #             "answer": resp_to_check,
-    #             "question": con
-    #         }
-    #         response = requests.post(url,json=data)
-    #         result = response.json()
-    #         res+=result['value']
-    #         #res+=result['pred']
-    #         continue
-    #     if ids in ['light']:
-    #         res=compute_score(resp_to_check,constraints[0])
-    #         return res*5
-    #     if ids in ['light_choice']:
-    #         boxed_answer = extract_boxed_content(resp_to_check)
-    #         if boxed_answer == "None":
-    #             matches = re.findall(r'boxed{(.*?)}', resp_to_check)
-    #             if matches:
-    #                 boxed_answer = matches[-1]  # 取最后一个匹配的内容
-    #         if boxed_answer == constraints[0]:
-    #             return 5
-    #         else:
-    #             return 0
-    #     instruction_cls = instructions_registry.INSTRUCTION_DICT[ids]
-    #     instruction = instruction_cls(ids)
-    #     call_build_description(instruction, arg)
-        
-    #     if resp_to_check.strip() and instruction.check_following(resp_to_check):
-    #         res+=1
-    #     else:
-    #         res+=0
+
     
     url = "http://100.99.119.58:55111/predict"
     data = {
@@ -124,7 +87,6 @@ def instruction_compute_score(answer, item):
     response = requests.post(url,json=data)
     result = response.json()
     res=result['value']
-    # res=res*(5/len(constraints))
 
     return res
     
@@ -139,7 +101,7 @@ def instruction_val_compute_score(answer, item):
     
     answer_pattern = r'<answer>(.*?)</answer>'
     answer_match = re.search(answer_pattern, answer, re.DOTALL)
-    # answer_match = re.search(r"</think>\n(.*)", answer, re.DOTALL)
+    
     if not answer_match:
         # print("not answer_match")
         return 0,0,len(item),0
@@ -148,9 +110,7 @@ def instruction_val_compute_score(answer, item):
     args_to_check = item['kwargs']
     resp_to_check = answer_match.group(1)
     
-    # print('=====test=====')
-    # print(resp_to_check)
-    # print('=====test=====')
+
 
     is_following_list = []
     for ids, arg in zip(ids_to_check, args_to_check):
