@@ -5,6 +5,7 @@
 ## 🔧 Environment Setup
 - Python and required dependencies
   ```bash
+   cd WRL/verl
    pip install -e .
    ```
 - Recommended:
