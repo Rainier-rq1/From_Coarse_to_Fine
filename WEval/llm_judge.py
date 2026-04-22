@@ -68,12 +68,12 @@ def infer_group_size_from_filename(filename):
     return 3
 
 def main():
-    model_path = "models--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+    model_path = "models--Qwen2.5-7B-Instruct"
     model = LLM(model_path, dtype='bfloat16', gpu_memory_utilization=0.8, tensor_parallel_size=4, max_num_seqs=256)
     tokenizer = AutoTokenizer.from_pretrained(model_path)
 
     input_file = "eval.jsonl"
-    output_file = "qwen7b.jsonl"
+    output_file = "llm_judge_ranked.jsonl"
 
     # 自动推断group_size
     group_size = infer_group_size_from_filename(input_file)
