@@ -65,7 +65,7 @@
    ```
    - Configure the correct **model path**
    - Configure  other parameters
-3. Start training (execute on master node):
+3. Start training:
    ```bash
    sh examples/qwen2_7b_instruction.sh
    ```
