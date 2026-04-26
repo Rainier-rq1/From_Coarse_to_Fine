@@ -63,7 +63,7 @@
    ```bash
    config.yaml
    ```
-   - Configure the correct **model path**
+   - Configure the correct **path**
    - Configure  other parameters
 3. Start training:
    ```bash
