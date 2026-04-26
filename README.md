@@ -13,7 +13,7 @@
     ```bash
    python WritingBench-Critic.py
    ```
-  ```bash
+    ```bash
    python llm_judge.py
    ```
 - Inference (Scalar Reward Model)
