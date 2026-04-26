@@ -9,14 +9,14 @@
    cd WEval
    ```
 
-- Inference(Generation Reward Model)
+- Inference (Generation Reward Model)
     ```bash
    python WritingBench-Critic.py
    ```
   ```bash
    python llm_judge.py
    ```
-- Inference(Scalar Reward Model)
+- Inference (Scalar Reward Model)
     ```bash
    python server.py
    python server_eval.py
