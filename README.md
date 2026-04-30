@@ -5,12 +5,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [WEval: Evaluation Module](#eval-weval)
-- [WRL: Training Module](#training--wrl)
-
----
 
 ## Evaluation: WEval
 
